@@ -1,0 +1,26 @@
+cost function -> ex: mean squared error
+gradient descent -> helps to find best fit line 
+
+# Saving the sklearn model 
+1)
+	with open('model','wb') as f: #here wb -> write binary
+		pickle.dump(model,f)
+
+........using the model
+	with open('model','rb') as f: # here rb -> read binary
+		model = pickle.load('model')
+2)
+
+from sklearn.externals import joblib # useful for large datasets
+	
+	joblib.dump(model,'model')
+
+........using the model
+	model = joblib.load('model')
+
+........ importing random forest 
+
+from sklearn.ensemble import RandomForestClassifer
+
+........ importing svm
+from sklearn.svm import SVR

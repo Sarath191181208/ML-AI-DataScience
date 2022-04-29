@@ -1,0 +1,5 @@
+# ignore csv files
+*.csv
+
+# ignore colon cancer as it is already in github named BGA
+coloncancer
