@@ -7,3 +7,10 @@ coloncancer
 # ignore python compiled and optimized files
 *.pyc
 __pycache__/
+*.temp
+
+# logs
+*.log
+
+#env
+.env
