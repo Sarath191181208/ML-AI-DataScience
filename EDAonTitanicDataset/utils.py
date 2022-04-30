@@ -82,10 +82,37 @@ def get_age(cols):
     return lst[Pclass - 1]
 
 
-def model_stats(model, x_test, y_test):
+def model_stats(model, x_test, y_test, ax=None, draw=True):
     pred = model.predict(x_test)
-
     cm = confusion_matrix(y_test, pred)
-    print("Accuracy: ", accuracy_score(y_test, pred))
 
-    sns.heatmap(cm, annot=True)
+    if not draw:
+        return accuracy_score(y_test, pred)
+
+    if ax is not None:
+        sns.heatmap(cm, annot=True, ax=ax)
+    else:
+        sns.heatmap(cm, annot=True, ax=ax)
+
+    return accuracy_score(y_test, pred)
+
+
+def transform_data(
+    data,
+    remove_cols=["PassengerId", "Name", "Ticket", "Fare", "Cabin"]
+):
+
+    data_set = data.copy()
+    data_set.drop(columns=remove_cols, inplace=True, axis=1)
+
+    # filling null values
+    mode = data_set["Embarked"].mode()[0]
+    data_set["Embarked"].fillna(mode, inplace=True)
+
+    sex_dum = pd.get_dummies(data_set['Sex'], drop_first=True)
+    emb_dum = pd.get_dummies(data_set['Embarked'], drop_first=True)
+
+    data_set = pd.concat([data_set, sex_dum, emb_dum], axis=1)
+    data_set.drop(columns=['Sex', 'Embarked'], inplace=True)
+
+    return data_set

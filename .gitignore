@@ -8,9 +8,14 @@ coloncancer
 *.pyc
 __pycache__/
 *.temp
+*.tmp
 
 # logs
 *.log
 
 #env
 .env
+
+#Todo files 
+[tT][oO][dD][oO]
+[tT][oO][dD][oO].[mM][dD]
