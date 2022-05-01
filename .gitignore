@@ -4,6 +4,9 @@
 # ignore colon cancer as it is already in github named BGA
 coloncancer
 
+# virtural environment
+venv/
+
 # ignore python compiled and optimized files
 *.pyc
 __pycache__/
