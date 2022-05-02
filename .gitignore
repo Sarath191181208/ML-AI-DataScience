@@ -22,3 +22,6 @@ __pycache__/
 #Todo files 
 [tT][oO][dD][oO]
 [tT][oO][dD][oO].[mM][dD]
+
+# vscode ide internal files 
+.vscode/
