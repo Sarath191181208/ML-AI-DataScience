@@ -7,6 +7,14 @@ def opacity_line(opacity: float=0.3)->str:
   """returns a line with opacity"""
   return f"<hr style='opacity: {opacity};'>"
 
+def display_shape(shape: tuple[int, int])->None:
+    rows_shape, cols_shape = shape
+    display(HTML(f'''
+      <h3>Rows: {rows_shape}, Columns: {cols_shape}</h3>
+    '''))
+
+    del rows_shape, cols_shape
+
 def to_table(x: pd.Series, headers: tuple[str]=None)->str:
   """converts pd.Series to html table"""
 
@@ -55,7 +63,7 @@ def display_cols(cols: pd.Series, no_cols=5)->None:
   def _get_cols(i: list[str])->str:
     """converts a list of strings to html table"""
     return "".join([f"<td>{ele}</td>" for ele in i])
-
+  cols = list(cols)
   # filling the non existant columns with empty strings
   if (a:=len(cols)%no_cols) != 0:
     cols = cols + [" "]*(no_cols-a)
@@ -104,6 +112,8 @@ def analyze_cols(data: pd.DataFrame, **kwargs)->None:
 
   
   cols = data.columns
+  
+  display_shape(data.shape)
   display_cols(cols, no_cols=kwargs.get("features_no_cols", 5))
 
   display(HTML("<h3> Data </h3>"))
