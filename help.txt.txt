@@ -24,3 +24,8 @@ from sklearn.ensemble import RandomForestClassifer
 
 ........ importing svm
 from sklearn.svm import SVR
+
+3)
+
+Null hypothesis - No statistical relation ship.
+Alternate hypothesis - There is a statistical relationship.
