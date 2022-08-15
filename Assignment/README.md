@@ -44,7 +44,7 @@ department Sharing En dagram for Account Payable for better night.
 
 ### [Question4](./ASSI_1/Question4.ipynb)
 
-Write a program to print the sum of the followinig series 1 + 1/2 + 1/3 + 1/n
+Write a program to print the sum of the followinig series 1 + 1/2 + 1/3 + ... + 1/n
 
 ### [Question5](./ASSI_1/Question5.ipynb)
 
