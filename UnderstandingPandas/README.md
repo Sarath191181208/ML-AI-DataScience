@@ -1,0 +1,1 @@
+# A place to store some of the pandas tricks learnt along the way
